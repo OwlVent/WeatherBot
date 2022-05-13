@@ -20,7 +20,7 @@ def get_weather(city, open_weather_token):
         data = r.json()
         # pprint(data)
 
-        city = data["name"]
+        #city = data["name"]
         cur_weather = data["main"]["temp"]
 
         weather_description = data["weather"][0]["main"]
@@ -36,7 +36,7 @@ def get_weather(city, open_weather_token):
         lenght_of_the_day = datetime.datetime.fromtimestamp(data["sys"]["sunset"]) - datetime.datetime.fromtimestamp(data["sys"]["sunrise"])
         print(
             f"*** {datetime.datetime.now().strftime('%Y-%m-%d %H:%M')} ***\n"
-            f"Погода в городе: {city}\nТемпература: {cur_weather}C°, {wd}\n"
+            f"Погода в городе: {city}\nТемпература: {cur_weather}°C, {wd}\n"
             f"Влажность: {humidity}%\nДавление: {pressure} мм.рт.ст\n"
             f"Скорость ветра: {wind} м/с\nВремя рассвета: {sunrise_timestamp}\n"
             f"Время заката: {sunset_timestamp}\nСветовой день: {lenght_of_the_day}\n"
